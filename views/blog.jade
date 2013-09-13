@@ -1,0 +1,40 @@
+extends layout
+ 
+block content
+ div.container-fluid
+  div.row-fluid
+    div.span8
+     div.hero-unit     
+       div.media-body
+        img.media-object(src='/images/logo.jpg')
+        h3
+         a(href='http://paper.li/VCongresoMedico/1378193318') Blog Informativo, ofrecemos noticias medicas.
+      div.row-fluid
+       div.span12
+        h4
+         #employees
+        - each employee in employees
+          div.employee
+             //-div.created_at= employee.created_at
+            h4.alert.alert-success
+             div.title= employee.title
+            div.name= employee.name
+
+       div.nav-header
+      a.twitter-share-button(href='https://twitter.com/share', data-text='V Congreso Medico', data-via='VCongresoMedico', data-lang='es', data-hashtags='medicina') Twittear
+      script
+       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+     div.span5
+      div.media
+       h1.media-heading ¡Contámos con tu asistencia!
+       h4.media-heading  URT Invita.       
+    div.span4
+     div.well.sidebar-nav
+      ul.nav.nav-list
+       li.nav-header twitter
+       li: a.twitter-timeline(width='300', height='500', href='https://twitter.com/VCongresoMedico', data-widget-id='374564539422887936') Tweets de @VCongresoMedico
+       img.media-object(src='/images/cona.jpg')
+       img.media-object(src='/images/logo.jpg')
+       
+     script
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

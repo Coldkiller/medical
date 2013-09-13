@@ -1,0 +1,24 @@
+
+extends layout
+
+block content
+	div.container-fluid
+		p +
+		p +
+		h2 Usuarios registrados
+		table.table.table-bordered.table-striped
+			thead
+				tr
+					th(style='width:40px') #
+					th(style='width:180px') Nombre
+					th(style='width:200px') Estado
+					th(style='width:180px') Folio de inscripcion
+					th Cuenta creada en
+			tbody
+			- for (var i = 0; i < accts.length; i++)
+				tr
+					td= i+1
+					td= accts[i].name
+					td= accts[i].country
+					td= accts[i].user
+					td= accts[i].date

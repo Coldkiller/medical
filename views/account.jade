@@ -1,0 +1,72 @@
+
+// preset form values if we receive a userdata object //
+- user = typeof(udata) != 'undefined' ? udata : { }
+// store the userId on the client side in a hidden input field //
+input(type='hidden', value= user._id)#userId
+div.container
+#account-form-container
+	form.form_sttings( method="post")#account-form.form-horizontal.well.span10
+		p +
+		h1 Registro
+		p#sub1.subheading Porfavor ingrese su informacion personal.
+		hr
+		fieldset
+			#name-cg.control-group
+				label.control-label(for='name-tf') Nombre
+				.controls
+					input#name-tf.input-xlarge(type='text', name='name', value= user.name)
+			#email-cg.control-group
+				label.control-label(for='email-tf') Email
+				.controls
+					input#email-tf.input-xlarge(type='text', name='email', value= user.email)
+			#clist-cg.control-group
+				label.control-label(for='country-list') Estado
+				.controls
+					select#country-list(name='country')
+						each item in countries
+							option(selected=item.name == user.country)= item.name
+			#slist-cg.control-group
+				label.control-label(for='sexo') Sexo
+				.controls
+					select#sexo-list(name='sexo')
+						each item in sexo
+							option(selected=item.name == user.sexo)= item.name
+			#nlist-cg.control-group
+				label.control-label(for='nivel') Nivel
+				.controls
+					select#nivel-list(name='nivel')
+						each item in nivel
+							option(selected=item.name == user.nivel)= item.name
+			hr
+			p#sub2.subheading
+			#user-cg.control-group
+				label.control-label(for='user-tf') Usuario
+				.controls
+					input#user-tf.input-xlarge.disabled(type='text', name='user', value= user.user)
+			#pass-cg.control-group
+				label.control-label(for='pass-tf') Contraseña
+				.controls
+					input#pass-tf.input-xlarge(type='password', name='pass', value='')
+			#matricula-cg.control-group
+				label.control-label(for='matricula-tf') Matricula
+				.controls
+					input#matricula-tf.input-xlarge(type='text', name='matricula', value= user.matricula)
+			#telefono-cg.control-group
+				label.control-label(for='telefono-tf') Numero 
+				.controls
+					input#telefono-tf.input-xlarge(type='text', name='telefono', value= user.telefono)
+			#universidad-cg.control-group
+				label.control-label(for='universidad-tf') Universidad 
+				.controls
+					input#universidad-tf.input-xlarge(type='text', name='universidad', value= user.universidad)
+			.form-actions
+				input#account-form-btn2.btn(type='submit', value='Registrarse')
+			.form-actions
+				button(type='button')#account-form-btn1.btn
+				button(type='submit')#account-form-btn2.btn
+
+// display form errors in a custom modal window //
+
+include modals/form-errors
+
+

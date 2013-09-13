@@ -1,0 +1,18 @@
+extends layout
+
+block content
+ div.container-fluid
+  div.row-fluid
+    div.span8
+     div.hero-unit  
+        form( method="post")
+            div
+                div.form_sttings
+                    span.label Titulo :
+                    input(type="text", name="title", id="editEmployeeTitle")
+                div
+                    span.label Contenido :
+                    input.btn(type="text", name="name", id="editEmployeeName")
+                div#editEmployeeSubmit
+                    input.btn(type="submit", value="Guardar")
+        a(href="/vista_blog")!= "Volver al blog"

@@ -1,0 +1,23 @@
+extends layout
+ 
+block content
+ div.container-fluid
+  div.row-fluid
+    div.span3
+     div.well.sidebar-nav
+      ul.nav.nav-list
+       li.nav-header Menu
+       li: a(href="/employee/new") Nueva Entrada
+ div.container
+    #employees
+        - each employee in employees
+          div.employee
+            div.created_at= employee.created_at
+            div.title= employee.title
+            div.name= employee.name
+                form( method="post", action="/employee/:id/delete")
+                    input(name="_id", type="hidden", value=employee._id.toHexString())
+                    input.btn(id="delete", value="Eliminar", type="submit")
+                form( method="get", action="/employee/:id/edit")
+                    input(name="_id", type="hidden", value=employee._id.toHexString())
+                    input.btn(id="edit", value="Editar", type="submit")

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+ div.container-fluid
+  div.row-fluid
+    div.span8
+     div.well.sidebar-nav
+      ul.nav.nav-list
+       li.nav-header Menu
+      h1= 'Editar entrada'
+       div.form_sttings
+        form( method='post')
+            input(name='_id', type='hidden', value=employee._id.toHexString())
+            div
+                div
+                    span.label Titulo :
+                    input(type='text', name='title', id='editEmployeeTitle', value=[title])
+                div
+                    span.label Contenido :
+                    textarea(type='text', cols=20,  rows=20, name='name', id='editEmployeeName', value=employee.name)
+                div#editEmployeeSubmit
+                    input(type='submit', value='Salvar')
+        a(href='/vista_entradas')!= 'volver a lalista de entradas'

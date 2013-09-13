@@ -1,0 +1,27 @@
+extends layout
+
+block content
+ div.container
+  div.row-fluid
+   div.span8
+     div.hero-unit     
+       div.media-body
+        h3
+         a(href='http://paper.li/VCongresoMedico/1378193318')
+          img.media-object(src='/images/logo.jpg')
+        h2 COSTOS:
+        h3 ANTES DEL 1 DE OCTUBRE:
+        h5 Médicos y residentes    400
+        h5 Enfermeras, estudiantes y otros profesionales de la salud 300
+        h3 DESPUES DEL 1 DE OCTUBRE 
+        h4 Médicos y residentes  500
+        h5 Enfermeras, estudiantes y otros profesionales de la salud  400 
+   div.span4
+    div.well.sidebar-nav
+     ul.nav.nav-list
+      li.nav-header twitter
+      li: a.twitter-timeline(width='300', height='500', href='https://twitter.com/VCongresoMedico', data-widget-id='374564539422887936') Tweets by @VCongresoMedico
+     script
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+       
+ 

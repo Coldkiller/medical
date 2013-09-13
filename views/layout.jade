@@ -1,0 +1,61 @@
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+    //-link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+    script(type='text/javascript', src='http://widgets.paper.li/javascripts/sr.embeddable.js')
+    script(src='/bootstrap/js/bootstrap.min.js')
+    script(type='text/javascript', src='http://platform.twitter.com/widgets.js')
+    meta(name='viewport', content='width=device-width', initial-scale='1.0')
+   body
+    div.navbar.navbar-fixed-top
+     div.navbar-inner
+      div.container
+       a(data-toggle='collapse',data-target='.nav-collapse').btn.btn-navbar
+        div.nav-collapse
+         ul.nav
+           li
+             a(href='/') Inicio
+           li
+             a(href='/vista_blog') Blog
+           li(id='menu1').dropdown
+             a(data-toggle='dropdown', href='#menu1').dropdown-toogle Comite
+              b.caret
+             ul.dropdown-menu
+               li
+                a(href="/vista_about") Quienes somos.
+               li
+                a(href="/vista_valores") Valores
+           li
+             a(href="/vista_programa") Programa
+           li
+             a(href="/vista_ponentes") Ponentes
+           li(id='menu1').dropdown
+             a(data-toggle='dropdown', href='#menu2').dropdown-toogle Inscripciones
+              b.caret
+             ul.dropdown-menu
+               li 
+               li: a(href="/vista_inscripcion") Inscripción
+               li
+                a(href="/vista_precios") Precios
+           li(id='menu1').dropdown
+             a(data-toggle='dropdown', href='#menu3').dropdown-toogle Información
+              b.caret
+             ul.dropdown-menu
+               li 
+               li
+                a(href="/vista_hospedaje") Hospedaje
+               li
+                a(href="/vista_turismo") Turismo 
+               li
+                a(href="/vista_faq") Preguntas Frecuentes      
+            //-li: img.media-object(src='/images/cona.jpg')
+
+
+script
+  $('.dropdown-toggle').dropdown()
+block content
+

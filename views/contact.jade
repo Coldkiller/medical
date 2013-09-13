@@ -1,0 +1,15 @@
+extends layout
+
+block content
+ div.container-fluid
+ div.row-fluid
+  div.span5
+  div.span9
+     div.hero-unit
+      h2 Ponte en contacto con nosotros.
+      p Si tienes alguna duda o sugerencia, este sito está dedicado para que nos contactes
+      div.form_sttings
+       - if (typeof contact !== 'undefined')
+        contact(method='post')
+          != contact
+          input.btn(type='submit', value='Enviar')

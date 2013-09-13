@@ -1,0 +1,17 @@
+extends layout
+ 
+block content
+ div.container-fluid
+  div.row-fluid
+    div.span3
+     div.well.sidebar-nav
+      ul.nav.nav-list
+       li.nav-header Menu
+       li: a(href="/employee/new") Nueva Entrada
+       li: a(href="/vista_entradas") Entradas
+       li: a(href="/print") Usuarios
+    div.span9
+     div.hero-unit
+      h2 Bienvenido al panel de control
+      p Aqui esta disponible la informacion del sitio
+       |puedes clckar en el menu que se ubica al costado izquierdo
